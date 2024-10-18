@@ -1,0 +1,17 @@
+{
+  "name": "todo-app-api",
+  "version": "1.0.0",
+  "description": "Todo app json API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Shalom Effiom",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security"
+  }
+
+}
