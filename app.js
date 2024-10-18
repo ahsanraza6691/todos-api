@@ -4,12 +4,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'data', 'todos.json');
 
+
 // Middleware
+ // Use CORS middleware
+ app.use(cors());
 app.use(bodyParser.json());
 
 // Helper function to read the JSON file
@@ -25,6 +30,7 @@ function writeTodos(todos) {
 
 // Create a new todo
 app.post('/api/todos', (req, res) => {
+    console.log(req.body)
     const todos = readTodos();
     const newTodo = {
         id: Date.now(),
